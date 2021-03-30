@@ -3,10 +3,64 @@
     margin-bottom: 20px;
 }
 
-.header > h3, h5 {
+.header h1 {
+    padding-left: 100px;
+    font-size: 5em;
+}
+
+.header>h1,
+h5 {
     margin: 0;
     padding-top: 20px;
     text-align: center;
 }
+
+.text {
+    max-width: 700px;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 100px;
+    align-items: center;
+    text-align: center;
+
+}
+
+.wordcloud {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 100px;
+    align-items: center;
+    text-align: center;
+}
+
+#graph1 {
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+#graph3 {
+    margin-left: 300px;
+    padding-left: 300px;
+    padding-bottom: 50px;
+}
+
+#graph2 {
+    padding-bottom: 50px;
+}
+
+/* h2 {
+    padding-left: 300px;
+} */
+
+
+
+
+
+
 
 /* Include any custom CSS styling here! */

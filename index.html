@@ -1,28 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-        <meta charset="utf-8">
-        <title>Assignment 6 &laquo; Data Visualization Dashboard&raquo;</title>
-        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-        <link rel="stylesheet" href="main.css"/>
-        <!--Feel free to add more CSS files as needed-->
-        <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
-    </head>
+    <meta charset="utf-8">
+    <title>Data Visualization Dashboard&raquo;</title>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css?version=9" />
+
+    <!--Feel free to add more CSS files as needed-->
+    <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+    <script type="text/javascript" src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
+</head>
+
 <body>
     <div class="header">
-        <h3>Assignment 6 &laquo; Data Visualization Dashboard &raquo;</h3>
+        <h1> International football facts!</h1>
     </div>
     <!--  We included a basic HTML structure for the 3 graphs here. Feel free to change this if you'd like  -->
     <div class="row">
-        <div class="col-lg-6">
+        <div class="barplots">
+            <button type="button" class="btn btn-info" onclick="loadGraph1('recent.csv')">Recent Years</button>
+            <button type="button" class="btn btn-info" onclick="loadGraph1('ancient.csv')">1900 - 1905</button>
             <div id="graph1"></div>
-            <div id="graph2"></div><br/>
+            <div id="graph2">
+                <!-- <button type="button" class="btn btn-info" onclick="loadGraph2(true)">Include Territories</button> 
+                <button type="button" class="btn btn-info" onclick="loadGraph2(false)"> Exclude Territories </button> -->
+            </div>
         </div>
-        <div class="col-lg-6">
+        <div class="wordcloud">
+            <div>
+                <h2 style="font-weight: bolder;"> Countries most likely to win FIFA World Cup 2022</h2>
+                <h5>Based on winning percentage in the last two World Cups</h5>
+            </div>
             <div id="graph3"></div>
+        </div>
+        <div class="text">
+            <h1>Written Questions</h1>
+            <p>
+
+                Question 1
+            </p>
+            <p>
+                In the first question I answer the question by using a barplot of the total number of matches (x-axis)
+                and the corresponding year. I allow the user to compare the number of matches in recent years versus the
+                number of matches in distant years, early 1900s, by buttons on top of the barplot. The buttons allow the
+                user to toggle between 2015 - 2020 and 1900-1905.
+            </p>
+            <p>
+                I use a barplot of winning percentages (x-axis) against their corresponding country (y-axis) to show
+                what countries are the top 10 countries in terms of winning percentage since the beginning of football.
+            </p>
+            <p>
+                For the last question, I used a word cloud to show what countries are most likely to win the next world
+                cup by their winning percentages in the last two world cups. The larger the size of the name of the
+                country, the more likely the country is to win the world cup.I use a tooltip to reveal the winning of
+                the countries if the cursor moves over the name of the country
+                in the world cloud. The tooltip shows way outside the word cloud to make sure that it does not block
+                other words when it appears. It made sure that the user can notice the tooltip by giving it color and
+                bold font weight.
+            </p>
+
+
+            <p>Question 2</p>
+            <p> i)D3 allowed me to choose from a myriad of graphs and other visual options of how to communicate the
+                data.</p>
+            <p>ii)D3 allowed me to use DOM elements such as buttons to allow users to easily interact with the data and
+                toggle between subsets of the data.</p>
+
+            <p>iii) D33 allowed me to benefit from CSS and use it to style my dashboard in order to enhance clarity of
+                the data.</p>
+
+            <p>
+                Question 3
+            </p>
+            <p>
+                i) I found the D3 learning curve to be quite steep, at times, I felt like I would prefer using python
+                and
+                its libraries.
+            </p>
+
+            <p>
+                ii)SVGs do not natively support text-wrapping without using javascript, which is easily achievable using
+                HTML.
+            </p>
+
+            <p>
+                iii) There is limited opportunity to refactor code compared to python. Chained styling of the elements
+                can
+                make the code harder to read and debug especially as a beginner.
+            </p>
+
+
+
+            <p>
+                Question 4
+            </p>
+
+            <p>
+                My Dashboard is accessible to people with weaker vision and color blindness as I use strong contrast and
+                colors that are more readable for color blind people and have avoided colors that would be harder to see
+                and appreciate the data for people with Protranopia as suggested by Amanda Miller of the Betterment
+                article. I also use SVGs for the graphs which are better for screen readers than basic HTML. Moreover my
+                graphs have accessible axis labels.
+                I could make the Dashboard more accessible to those who are fully visually impaired by alternative text
+                “alt” to visual elements and perhaps add more text to the visuals themselves to supplement the
+                non-textual visual elements where more possible.
+            </p>
+
+            <p> Question 5</p>
+            <p>
+                As I mentioned above, I could have added “alt” text to some of my visual elements such as the buttons in
+                order to make my dashboard more accessible. This was particularly relevant in the final stages when I
+                added DOM elements to supplement my SVG graphs and word cloud. I didn't get to do so because of time
+                constraints and the fact my dashboard is accessible to my target audience ( the TA grader).
+            </p>
+
+            </p>
         </div>
     </div>
     <!--Feel free to add more JavaScript files as needed-->
-    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="main.js?2"></script>
 </body>
+
 </html>
