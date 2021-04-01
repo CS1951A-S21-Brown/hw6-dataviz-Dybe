@@ -80,7 +80,7 @@ svg.append("text")
 
 function loadGraph1(filename) {
 
-    d3.csv("./../data/" + filename).then(function (data) {
+    d3.csv("data/" + filename).then(function (data) {
 
         console.log(data)
 
@@ -142,7 +142,7 @@ function loadGraph1(filename) {
     });
 }
 
-d3.csv("./../data/football.csv").then(function (data) {
+d3.csv("data/football.csv").then(function (data) {
 
     //Chart 2: Winning Percentage
     data = winningData(data).slice(0, 10)
@@ -294,7 +294,7 @@ function winningData(data) {
     return filtered;
 }
 
-d3.csv("./../data/worldcup.csv").then(
+d3.csv("data/worldcup.csv").then(
     function (data) {
 
         data = winningData(data, false).filter(function (value) {
